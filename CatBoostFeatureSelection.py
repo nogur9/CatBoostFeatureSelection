@@ -21,7 +21,7 @@ class CatBoostFeatureSelection(BaseEstimator, TransformerMixin):
 
         selected = cb.select_features(X, y, features_for_select= X.columns,
                                       num_features_to_select=self.num_features_to_select,
-                                      verbose=False, eval_set=self.eval_set, logging_level='silent')
+                                      eval_set=self.eval_set, logging_level='Silent')
 
         self.selected_features_indices = selected['selected_features']
 
